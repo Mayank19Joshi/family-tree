@@ -106,7 +106,7 @@ const familyData = {
               description: "Life partner of Rashmi Upreti and parent of Devansh Pant and P Pant.",
               members: [
                 { id: "devansh-pant", name: "Devansh Pant", role: "Child", description: "Child of Rashmi Upreti and Nitin Pant.", members: [] },
-                { id: "p-pant", name: "P Pant", role: "Child", description: "Child of Rashmi Upreti and Nitin Pant.", members: [] }
+                { id: "p-pant", name: "Trisha Pant", role: "Child", description: "Child of Rashmi Upreti and Nitin Pant.", members: [] }
               ]
             }
           ]
