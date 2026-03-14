@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joshi Family Tree</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Living lineage of Kumaon</p>
+        <h1>The Joshi Family Tree</h1>
+        <p class="hero-text">
+          A visual family hierarchy that turns names into a connected story. Rooted in the Kumaoni
+          culture of Uttarakhand, this family tree celebrates generations, relationships, and the
+          shared legacy of home, tradition, and belonging.
+        </p>
+        <div class="hero-stats" id="hero-stats"></div>
+      </div>
+      <aside class="spotlight" id="spotlight">
+        <p class="spotlight-label">Family spotlight</p>
+        <h2 id="spotlight-name">Hira Vallabh Joshi &amp; Kalavati Joshi</h2>
+        <p id="spotlight-role">Grandparents | Root of the Joshi family tree</p>
+        <p id="spotlight-description">
+          Select any person or family card to highlight that branch and trace how each generation
+          grows outward from the founding grandparents, carrying forward the warmth and values of a
+          Kumaoni family.
+        </p>
+      </aside>
+    </header>
+
+    <main class="layout">
+      <section class="tree-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Interactive map</p>
+            <h2>Family hierarchy</h2>
+          </div>
+          <div class="toolbar-actions">
+            <button class="ghost-button" id="expand-all" type="button">Expand all</button>
+            <button class="ghost-button" id="collapse-all" type="button">Collapse branches</button>
+            <button class="ghost-button" id="reset-view" type="button">Reset focus</button>
+          </div>
+        </div>
+        <div class="search-bar">
+          <label class="search-label" for="tree-search">Search family members</label>
+          <input id="tree-search" class="search-input" type="search" placeholder="Search by name, role, or branch">
+          <p class="search-status" id="search-status">Showing the full family tree.</p>
+        </div>
+        <div class="tree-stage">
+          <div class="tree-root" id="tree-root" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="detail-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Branch details</p>
+            <h2>Selected branch</h2>
+          </div>
+        </div>
+        <div class="detail-card" id="detail-card">
+          <p class="detail-kicker" id="detail-kicker">Root family</p>
+          <h3 id="detail-title">Hira Vallabh Joshi &amp; Kalavati Joshi</h3>
+          <p id="detail-subtitle">Grandparents</p>
+          <ul class="detail-list" id="detail-list"></ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
