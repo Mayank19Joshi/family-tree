@@ -31,6 +31,10 @@
           grows outward from the founding elders, carrying forward the warmth and values of a
           Kumaoni family.
         </p>
+        <p id="spotlight-origin">
+          From Masmoli, Pithoragarh village. The family is currently located across Haldwani and
+          the Delhi-NCR region.
+        </p>
       </aside>
     </header>
 
@@ -42,6 +46,11 @@
             <h2>Family hierarchy</h2>
           </div>
           <div class="toolbar-actions">
+            <div class="zoom-controls" aria-label="Zoom controls">
+              <button class="ghost-button zoom-button" id="zoom-out" type="button" aria-label="Zoom out">-</button>
+              <span class="zoom-indicator" id="zoom-indicator">60%</span>
+              <button class="ghost-button zoom-button" id="zoom-in" type="button" aria-label="Zoom in">+</button>
+            </div>
             <button class="ghost-button" id="expand-all" type="button">Expand all</button>
             <button class="ghost-button" id="collapse-all" type="button">Collapse branches</button>
             <button class="ghost-button" id="reset-view" type="button">Reset focus</button>
@@ -53,7 +62,9 @@
           <p class="search-status" id="search-status">Showing the full family tree.</p>
         </div>
         <div class="tree-stage">
-          <div class="tree-root" id="tree-root" aria-live="polite"></div>
+          <div class="tree-viewport" id="tree-viewport">
+            <div class="tree-root" id="tree-root" aria-live="polite"></div>
+          </div>
         </div>
       </section>
 
@@ -77,7 +88,7 @@
     <footer class="site-footer">
       <div>
         <p class="footer-title">The Joshi's</p>
-        <p class="footer-credit">Developed by Mayank Joshi </span> with ❤️ </p>
+        <p class="footer-credit">Developed by Mayank Joshi with <span aria-hidden="true">&#10084;&#65039;</span></p>
       </div>
       <a class="footer-instagram" href="https://www.instagram.com/mayank_Joshii10/" target="_blank" rel="noreferrer">
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -91,3 +102,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+

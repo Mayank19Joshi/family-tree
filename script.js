@@ -2,11 +2,11 @@ const familyData = {
   id: "root",
   name: "Radha Ballabh Joshi & Manuli Joshi",
   role: "Great-grandparents",
-  description: "Root of the Joshi family tree, leading into the next generation through Heera Ballabh Joshi and Kalavati Joshi.",
+  description: "Root of the Joshi family tree, leading into the next generation through Heera Ballabh Joshi and Kalawati Joshi.",
   members: [
     {
       id: "heera-ballabh-family",
-      name: "Heera Ballabh Joshi & Kalavati Joshi",
+      name: "Heera Ballabh Joshi & Kalawati Joshi",
       role: "Grandparents",
       description: "Their branch includes the main Joshi family households and the generations beneath them.",
       members: [
@@ -38,8 +38,8 @@ const familyData = {
           ]
         },
         {
-          id: "kevalanand-family",
-          name: "Kevalanand Joshi & Kunkun Joshi",
+          id: "kewalanand-family",
+          name: "Kewalanand Joshi & Kunkun Joshi",
           role: "Family branch 2",
           description: "Their branch includes Ashutosh Joshi and his family, along with Himanshu Joshi.",
           members: [
@@ -60,7 +60,7 @@ const familyData = {
                 }
               ]
             },
-            { id: "himanshu-joshi", name: "Himanshu Joshi", role: "Child", description: "Child of Kevalanand Joshi and Kunkun Joshi.", members: [] }
+            { id: "himanshu-joshi", name: "Himanshu Joshi", role: "Child", description: "Child of Kewalanand Joshi and Kunkun Joshi.", members: [] }
           ]
         },
         {
@@ -154,6 +154,11 @@ const expandAllButton = document.getElementById("expand-all");
 const collapseAllButton = document.getElementById("collapse-all");
 const searchInput = document.getElementById("tree-search");
 const searchStatus = document.getElementById("search-status");
+const treeStage = document.querySelector(".tree-stage");
+const treeViewport = document.getElementById("tree-viewport");
+const zoomOutButton = document.getElementById("zoom-out");
+const zoomInButton = document.getElementById("zoom-in");
+const zoomIndicator = document.getElementById("zoom-indicator");
 
 const nodesById = new Map();
 const parentById = new Map();
@@ -162,6 +167,7 @@ let activeId = familyData.id;
 let searchTerm = "";
 let visibleIds = new Set();
 let matchedIds = new Set();
+let zoomLevel = 0.6;
 
 function flattenTree(node, parentId = null) {
   nodesById.set(node.id, node);
@@ -349,6 +355,21 @@ function renderTree() {
 
   syncActiveState();
   updateSearchStatus();
+  applyZoom();
+}
+
+function applyZoom() {
+  zoomLevel = Math.min(1.4, Math.max(0.6, zoomLevel));
+  treeViewport.style.setProperty("--tree-scale", zoomLevel.toFixed(2));
+  zoomIndicator.textContent = `${Math.round(zoomLevel * 100)}%`;
+
+  const scaledHeight = Math.ceil(treeViewport.offsetHeight * zoomLevel);
+  treeStage.style.height = `${scaledHeight}px`;
+}
+
+function centerTreeView() {
+  const horizontalOffset = Math.max(0, (treeViewport.offsetWidth - treeStage.clientWidth) / 2);
+  treeStage.scrollLeft = horizontalOffset;
 }
 
 function renderStats() {
@@ -442,6 +463,18 @@ expandAllButton.addEventListener("click", () => {
   renderTree();
 });
 
+zoomOutButton.addEventListener("click", () => {
+  zoomLevel -= 0.1;
+  applyZoom();
+  centerTreeView();
+});
+
+zoomInButton.addEventListener("click", () => {
+  zoomLevel += 0.1;
+  applyZoom();
+  centerTreeView();
+});
+
 collapseAllButton.addEventListener("click", () => {
   collapsedIds.clear();
   getAllExpandableIds(familyData)
@@ -459,3 +492,4 @@ flattenTree(familyData);
 renderStats();
 renderTree();
 updateDetails(familyData);
+centerTreeView();

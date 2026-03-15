@@ -119,6 +119,7 @@ h3 {
 .hero-text,
 #spotlight-role,
 #spotlight-description,
+#spotlight-origin,
 #detail-subtitle,
 .detail-summary,
 .card-meta,
@@ -131,6 +132,11 @@ h3 {
   max-width: 58ch;
   color: var(--muted);
   margin: 20px 0 28px;
+}
+
+#spotlight-origin {
+  margin: 16px 0 0;
+  color: rgba(255, 247, 242, 0.9);
 }
 
 .hero-stats {
@@ -149,7 +155,7 @@ h3 {
 }
 
 .layout {
-  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.7fr);
+  grid-template-columns: 1fr;
 }
 
 .tree-panel,
@@ -170,6 +176,28 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.zoom-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+  border-radius: 999px;
+  border: 1px solid rgba(93, 45, 20, 0.1);
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.zoom-button {
+  min-width: 42px;
+  padding-inline: 0;
+}
+
+.zoom-indicator {
+  min-width: 52px;
+  text-align: center;
+  color: var(--muted);
+  font-weight: 700;
 }
 
 .ghost-button {
@@ -226,11 +254,24 @@ h3 {
 }
 
 .tree-stage {
+  display: flex;
+  justify-content: center;
   overflow-x: auto;
   padding-bottom: 6px;
+  align-items: flex-start;
+}
+
+.tree-viewport {
+  width: max-content;
+  min-width: 100%;
+  margin: 0 auto;
+  transform: scale(var(--tree-scale, 0.9));
+  transform-origin: top center;
+  transition: transform 180ms ease;
 }
 
 .tree-root {
+  width: 100%;
   min-width: max-content;
 }
 
@@ -243,18 +284,29 @@ h3 {
   display: flex;
   justify-content: center;
   gap: 22px;
-  padding-top: 34px;
+  padding-top: 38px;
 }
 
 .generation::before {
   content: "";
   position: absolute;
-  top: 13px;
+  top: -18px;
   left: 50%;
   width: 2px;
-  height: 22px;
-  background: linear-gradient(to bottom, var(--line-strong), rgba(103, 66, 43, 0));
+  height: 18px;
+  background: var(--line-strong);
   transform: translateX(-50%);
+}
+
+.generation::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 32px;
+  right: 32px;
+  height: 2px;
+  background: var(--line-strong);
+  border-radius: 999px;
 }
 
 .branch {
@@ -269,10 +321,10 @@ h3 {
 .branch::before {
   content: "";
   position: absolute;
-  top: -20px;
+  top: 0;
   left: 50%;
   width: 2px;
-  height: 20px;
+  height: 22px;
   background: var(--line-strong);
   transform: translateX(-50%);
 }
@@ -387,12 +439,16 @@ h3 {
 }
 
 .nested-generation {
-  padding-top: 14px;
+  padding-top: 22px;
 }
 
 .nested-generation::before {
-  top: -8px;
-  height: 22px;
+  top: -14px;
+  height: 14px;
+}
+
+.nested-generation::after {
+  top: 0;
 }
 
 .detail-card {
@@ -520,6 +576,11 @@ h3 {
 
   .generation {
     justify-content: flex-start;
+  }
+
+  .generation::after {
+    left: 18px;
+    right: 18px;
   }
 
   .section-heading {
