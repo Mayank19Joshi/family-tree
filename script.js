@@ -1,128 +1,136 @@
 const familyData = {
   id: "root",
-  name: "Hira Vallabh Joshi & Kalavati Joshi",
-  role: "Grandparents",
-  description: "Root of the Joshi family tree with six family branches growing into the next generation.",
+  name: "Radha Ballabh Joshi & Manuli Joshi",
+  role: "Great-grandparents",
+  description: "Root of the Joshi family tree, leading into the next generation through Heera Ballabh Joshi and Kalavati Joshi.",
   members: [
     {
-      id: "kaustubha-nand-family",
-      name: "Kaustubha Nand Joshi & Hema Joshi",
-      role: "Family branch 1",
-      description: "Their branch includes Deepak Joshi and his family, along with Somali Joshi.",
+      id: "heera-ballabh-family",
+      name: "Heera Ballabh Joshi & Kalavati Joshi",
+      role: "Grandparents",
+      description: "Their branch includes the main Joshi family households and the generations beneath them.",
       members: [
         {
-          id: "deepak-joshi",
-          name: "Deepak Joshi",
-          role: "Child",
-          description: "Married to Deepti Joshi and parent of Priyangi and Rushika.",
+          id: "kaustubha-nand-family",
+          name: "Kaustubha Nand Joshi & Hema Joshi",
+          role: "Family branch 1",
+          description: "Their branch includes Deepak Joshi and his family, along with Somali Joshi.",
           members: [
             {
-              id: "deepti-joshi",
-              name: "Deepti Joshi",
-              role: "Spouse",
-              description: "Life partner of Deepak Joshi and parent of Priyangi and Rushika.",
+              id: "deepak-joshi",
+              name: "Deepak Joshi",
+              role: "Child",
+              description: "Married to Deepti Joshi and parent of Priyangi and Rushika.",
               members: [
-                { id: "priyangi-joshi", name: "Priyangi Joshi", role: "Child", description: "Child of Deepak Joshi and Deepti Joshi.", members: [] },
-                { id: "rushika-joshi", name: "Rushika Joshi", role: "Child", description: "Child of Deepak Joshi and Deepti Joshi.", members: [] }
+                {
+                  id: "deepti-joshi",
+                  name: "Deepti Joshi",
+                  role: "Spouse",
+                  description: "Life partner of Deepak Joshi and parent of Priyangi and Rushika.",
+                  members: [
+                    { id: "priyangi-joshi", name: "Priyangi Joshi", role: "Child", description: "Child of Deepak Joshi and Deepti Joshi.", members: [] },
+                    { id: "rushika-joshi", name: "Rushika Joshi", role: "Child", description: "Child of Deepak Joshi and Deepti Joshi.", members: [] }
+                  ]
+                }
               ]
-            }
-          ]
-        },
-        { id: "somali-joshi", name: "Somali Joshi", role: "Child", description: "Child of Kaustubha Nand Joshi and Hema Joshi.", members: [] }
-      ]
-    },
-    {
-      id: "kevalanand-family",
-      name: "Kevalanand Joshi & Kunkun Joshi",
-      role: "Family branch 2",
-      description: "Their branch includes Ashutosh Joshi and his family, along with Himanshu Joshi.",
-      members: [
-        {
-          id: "ashutosh-joshi",
-          name: "Ashutosh Joshi",
-          role: "Child",
-          description: "Married to Karuna Joshi and parent of Harshita Joshi.",
-          members: [
-            {
-              id: "karuna-joshi",
-              name: "Karuna Joshi",
-              role: "Spouse",
-              description: "Life partner of Ashutosh Joshi and parent of Harshita Joshi.",
-              members: [
-                { id: "harshita-joshi", name: "Harshita Joshi", role: "Child", description: "Child of Ashutosh Joshi and Karuna Joshi.", members: [] }
-              ]
-            }
-          ]
-        },
-        { id: "himanshu-joshi", name: "Himanshu Joshi", role: "Child", description: "Child of Kevalanand Joshi and Kunkun Joshi.", members: [] }
-      ]
-    },
-    {
-      id: "chidanand-family",
-      name: "Chidanand Joshi & Asha Joshi",
-      role: "Family branch 3",
-      description: "Their branch includes two children.",
-      members: [
-        { id: "rahul-joshi", name: "Rahul Joshi", role: "Child", description: "Child of Chidanand Joshi and Asha Joshi.", members: [] },
-        { id: "mayank-joshi", name: "Mayank Joshi", role: "Child", description: "Child of Chidanand Joshi and Asha Joshi.", members: [] }
-      ]
-    },
-    {
-      id: "dharmanand-family",
-      name: "Dharmanand Joshi & Manju Joshi",
-      role: "Family branch 4",
-      description: "Their branch includes two children.",
-      members: [
-        { id: "jyoti-joshi", name: "Jyoti Joshi", role: "Child", description: "Child of Dharmanand Joshi and Manju Joshi.", members: [] },
-        { id: "sourav-joshi", name: "Sourav Joshi", role: "Child", description: "Child of Dharmanand Joshi and Manju Joshi.", members: [] }
-      ]
-    },
-    {
-      id: "bhupesh-family",
-      name: "Bhupesh Joshi & Bhawana Joshi",
-      role: "Family branch 5",
-      description: "Their branch includes two children.",
-      members: [
-        { id: "divyanshu-joshi", name: "Divyanshu Joshi", role: "Child", description: "Child of Bhupesh Joshi and Bhawana Joshi.", members: [] },
-        { id: "piyush-joshi", name: "Piyush Joshi", role: "Child", description: "Child of Bhupesh Joshi and Bhawana Joshi.", members: [] }
-      ]
-    },
-    {
-      id: "deepa-family",
-      name: "Deepa Upreti & P.C. Upreti",
-      role: "Family branch 6",
-      description: "Their branch includes two children.",
-      members: [
-        {
-          id: "rashmi-upreti",
-          name: "Rashmi Upreti",
-          role: "Child",
-          description: "Child of Deepa Upreti and P.C. Upreti, married to Nitin Pant.",
-          members: [
-            {
-              id: "nitin-pant",
-              name: "Nitin Pant",
-              role: "Spouse",
-              description: "Life partner of Rashmi Upreti and parent of Devansh Pant and P Pant.",
-              members: [
-                { id: "devansh-pant", name: "Devansh Pant", role: "Child", description: "Child of Rashmi Upreti and Nitin Pant.", members: [] },
-                { id: "p-pant", name: "Trisha Pant", role: "Child", description: "Child of Rashmi Upreti and Nitin Pant.", members: [] }
-              ]
-            }
+            },
+            { id: "somali-joshi", name: "Somali Joshi", role: "Child", description: "Child of Kaustubha Nand Joshi and Hema Joshi.", members: [] }
           ]
         },
         {
-          id: "sanjay-upreti",
-          name: "Sanjay Upreti",
-          role: "Child",
-          description: "Child of Deepa Upreti and P.C. Upreti, married to Tanuja Upreti.",
+          id: "kevalanand-family",
+          name: "Kevalanand Joshi & Kunkun Joshi",
+          role: "Family branch 2",
+          description: "Their branch includes Ashutosh Joshi and his family, along with Himanshu Joshi.",
           members: [
             {
-              id: "tanuja-upreti",
-              name: "Tanuja Upreti",
-              role: "Spouse",
-              description: "Life partner of Sanjay Upreti.",
-              members: []
+              id: "ashutosh-joshi",
+              name: "Ashutosh Joshi",
+              role: "Child",
+              description: "Married to Karuna Joshi and parent of Harshita Joshi.",
+              members: [
+                {
+                  id: "karuna-joshi",
+                  name: "Karuna Joshi",
+                  role: "Spouse",
+                  description: "Life partner of Ashutosh Joshi and parent of Harshita Joshi.",
+                  members: [
+                    { id: "harshita-joshi", name: "Harshita Joshi", role: "Child", description: "Child of Ashutosh Joshi and Karuna Joshi.", members: [] }
+                  ]
+                }
+              ]
+            },
+            { id: "himanshu-joshi", name: "Himanshu Joshi", role: "Child", description: "Child of Kevalanand Joshi and Kunkun Joshi.", members: [] }
+          ]
+        },
+        {
+          id: "chidanand-family",
+          name: "Chidanand Joshi & Asha Joshi",
+          role: "Family branch 3",
+          description: "Their branch includes two children.",
+          members: [
+            { id: "rahul-joshi", name: "Rahul Joshi", role: "Child", description: "Child of Chidanand Joshi and Asha Joshi.", members: [] },
+            { id: "mayank-joshi", name: "Mayank Joshi", role: "Child", description: "Child of Chidanand Joshi and Asha Joshi.", members: [] }
+          ]
+        },
+        {
+          id: "dharmanand-family",
+          name: "Dharmanand Joshi & Manju Joshi",
+          role: "Family branch 4",
+          description: "Their branch includes two children.",
+          members: [
+            { id: "jyoti-joshi", name: "Jyoti Joshi", role: "Child", description: "Child of Dharmanand Joshi and Manju Joshi.", members: [] },
+            { id: "sourav-joshi", name: "Sourav Joshi", role: "Child", description: "Child of Dharmanand Joshi and Manju Joshi.", members: [] }
+          ]
+        },
+        {
+          id: "bhupesh-family",
+          name: "Bhupesh Joshi & Bhawana Joshi",
+          role: "Family branch 5",
+          description: "Their branch includes two children.",
+          members: [
+            { id: "divyanshu-joshi", name: "Divyanshu Joshi", role: "Child", description: "Child of Bhupesh Joshi and Bhawana Joshi.", members: [] },
+            { id: "piyush-joshi", name: "Piyush Joshi", role: "Child", description: "Child of Bhupesh Joshi and Bhawana Joshi.", members: [] }
+          ]
+        },
+        {
+          id: "deepa-family",
+          name: "Deepa Upreti & P.C. Upreti",
+          role: "Family branch 6",
+          description: "Their branch includes two children.",
+          members: [
+            {
+              id: "rashmi-upreti",
+              name: "Rashmi Upreti",
+              role: "Child",
+              description: "Child of Deepa Upreti and P.C. Upreti, married to Nitin Pant.",
+              members: [
+                {
+                  id: "nitin-pant",
+                  name: "Nitin Pant",
+                  role: "Spouse",
+                  description: "Life partner of Rashmi Upreti and parent of Devansh Pant and Trisha Pant.",
+                  members: [
+                    { id: "devansh-pant", name: "Devansh Pant", role: "Child", description: "Child of Rashmi Upreti and Nitin Pant.", members: [] },
+                    { id: "trisha-pant", name: "Trisha Pant", role: "Child", description: "Child of Rashmi Upreti and Nitin Pant.", members: [] }
+                  ]
+                }
+              ]
+            },
+            {
+              id: "sanjay-upreti",
+              name: "Sanjay Upreti",
+              role: "Child",
+              description: "Child of Deepa Upreti and P.C. Upreti, married to Tanuja Upreti.",
+              members: [
+                {
+                  id: "tanuja-upreti",
+                  name: "Tanuja Upreti",
+                  role: "Spouse",
+                  description: "Life partner of Sanjay Upreti.",
+                  members: []
+                }
+              ]
             }
           ]
         }
@@ -138,6 +146,7 @@ const spotlightDescription = document.getElementById("spotlight-description");
 const detailKicker = document.getElementById("detail-kicker");
 const detailTitle = document.getElementById("detail-title");
 const detailSubtitle = document.getElementById("detail-subtitle");
+const detailSummary = document.getElementById("detail-summary");
 const detailList = document.getElementById("detail-list");
 const heroStats = document.getElementById("hero-stats");
 const resetViewButton = document.getElementById("reset-view");
@@ -170,6 +179,28 @@ function countDepth(node) {
   }
 
   return 1 + Math.max(...node.members.map(countDepth));
+}
+
+function countDescendants(node) {
+  return node.members.reduce((sum, member) => sum + 1 + countDescendants(member), 0);
+}
+
+function appendDescendantItems(list, members, depth = 0) {
+  members.forEach((member) => {
+    const item = document.createElement("li");
+    item.className = "member-item";
+    item.style.setProperty("--depth", depth);
+    item.innerHTML = `
+      <strong>${member.name}</strong>
+      <span class="member-role">${member.role}</span>
+      <span class="member-description">${member.description}</span>
+    `;
+    list.appendChild(item);
+
+    if (member.members.length) {
+      appendDescendantItems(list, member.members, depth + 1);
+    }
+  });
 }
 
 function getAllExpandableIds(node) {
@@ -337,22 +368,18 @@ function updateDetails(node) {
   spotlightRole.textContent = `${node.role} | ${node.members.length ? `${node.members.length} linked ${node.members.length === 1 ? "member" : "members"}` : "Leaf node"}`;
   spotlightDescription.textContent = node.description;
 
-  detailKicker.textContent = node.id === familyData.id ? "Root family" : "Selected family node";
+  detailKicker.textContent = node.id === familyData.id ? "Root family node" : "Family node";
   detailTitle.textContent = node.name;
   detailSubtitle.textContent = node.role;
+  detailSummary.textContent = `${countDescendants(node)} total descendant${countDescendants(node) === 1 ? "" : "s"} linked under this family node.`;
 
   if (!node.members.length) {
-    detailList.innerHTML = '<li class="member-item"><strong>No further children listed</strong>This person currently appears as an end point in the shared family hierarchy.</li>';
+    detailList.innerHTML = '<li class="member-item"><strong>No further family members listed</strong>This person currently appears as an end point in the shared family hierarchy.</li>';
     return;
   }
 
   detailList.innerHTML = "";
-  node.members.forEach((member) => {
-    const item = document.createElement("li");
-    item.className = "member-item";
-    item.innerHTML = `<strong>${member.name}</strong>${member.role} | ${member.description}`;
-    detailList.appendChild(item);
-  });
+  appendDescendantItems(detailList, node.members);
 }
 
 function updateSearchStatus() {
